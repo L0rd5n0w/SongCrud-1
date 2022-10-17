@@ -1,4 +1,5 @@
 from email.policy import default
+from logging import PlaceHolder
 from random import choices
 from secrets import choice
 from tkinter import CASCADE
@@ -28,6 +29,7 @@ class Song(models.Model):
         ('likes', 'Like'),
         ('Dis', 'Dislike')
     )
+    likes = models.CharField(max_length=50, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
