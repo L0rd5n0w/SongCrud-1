@@ -40,5 +40,6 @@ class Lyric(models.Model):
     song_id = models.ForeignKey(Song, on_delete=models.CASCADE)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
+
     def __str__(self):
         return self.song_id.title
